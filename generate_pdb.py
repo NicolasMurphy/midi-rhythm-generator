@@ -2,7 +2,7 @@ from mido import MidiFile, MidiTrack, Message
 from Bio.PDB import PDBParser
 
 parser = PDBParser()
-structure = parser.get_structure("Molecule_1", "HMDB0001830 (Progesterone)_3D.pdb")
+structure = parser.get_structure("Calcitriol", "HMDB0001903 (Calcitriol)_3D.pdb")
 
 mid = MidiFile()
 track = MidiTrack()
@@ -27,4 +27,4 @@ for model in structure:
                     Message("note_off", note=note, velocity=velocity, time=duration)
                 )
 
-mid.save("Progesterone.mid")
+mid.save("Calcitriol.mid")
